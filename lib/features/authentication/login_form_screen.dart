@@ -14,8 +14,6 @@ class _LoginFormScreenState extends State<LoginFormScreen> {
 
   Map<String, String> formData = {};
 
-
-
   void _onSubmitTap(){
 
     //current state가 null인지 확인

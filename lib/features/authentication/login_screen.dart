@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:test_app/features/authentication/login_form_screen.dart';
-import 'package:test_app/features/authentication/username_screen.dart';
 import 'widgets/auth_button.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-
-  void _onSignUpTap(BuildContext context) {
-    Navigator.of(context).pop();
-  }
 
   void _onEmailTap(BuildContext context) {
     Navigator.of(context).push(
@@ -61,7 +57,7 @@ class LoginScreen extends StatelessWidget {
           children: [
             const Text('계정이 아직 없으신가요?'),
             GestureDetector(
-              onTap: () => _onSignUpTap(context),
+              onTap: () => context.go('/sign_up'),
               child: const Text(
                 '회원가입',
                 style: TextStyle(

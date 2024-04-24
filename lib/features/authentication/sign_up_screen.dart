@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:test_app/features/authentication/username_screen.dart';
 import 'package:test_app/features/authentication/login_screen.dart';
 import 'package:test_app/features/authentication/widgets/auth_button.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
-
   void _onLoginTab(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute(builder: (context) => const LoginScreen()),
@@ -38,6 +37,7 @@ class SignUpScreen extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
+            Text(''),
             AuthButton(
               icon: const FaIcon(FontAwesomeIcons.solidUser),
               label: '사용자 전화번호 혹은 이메일 회원가입',
@@ -63,7 +63,7 @@ class SignUpScreen extends StatelessWidget {
           children: [
             const Text('이미 계정이 있으신가요?'),
             GestureDetector(
-              onTap: () => _onLoginTab(context),
+              onTap: () => context.go('/login'),
               child: const Text(
                 '로그인',
                 style: TextStyle(

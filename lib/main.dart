@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'features/authentication/sign_up_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:test_app/router.dart';
 
 void main() {
   runApp(const TestApp());
@@ -12,7 +12,8 @@ class TestApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       title: 'Flutter Demo',
       theme: ThemeData(
         useMaterial3: true,
@@ -26,18 +27,17 @@ class TestApp extends StatelessWidget {
             color: Colors.black,
             fontSize: 18,
             fontWeight: FontWeight.bold,
-        ),
+          ),
         ),
       ),
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: [
+      supportedLocales: const [
         Locale('ko', ''),
         Locale('en', ''),
       ],
-      home: const SignUpScreen(),
     );
   }
 }
