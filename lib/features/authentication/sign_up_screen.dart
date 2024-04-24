@@ -63,7 +63,7 @@ class SignUpScreen extends StatelessWidget {
           children: [
             const Text('이미 계정이 있으신가요?'),
             GestureDetector(
-              onTap: () => context.go('/login'),
+              onTap: () => context.go('/my?show=report'),
               child: const Text(
                 '로그인',
                 style: TextStyle(

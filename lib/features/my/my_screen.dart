@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
+import 'package:test_app/features/main_navigation/main_navigation_screen.dart';
 
 class MyScreen extends StatelessWidget {
   const MyScreen(this.tab, {super.key});
@@ -23,6 +24,7 @@ class MyScreen extends StatelessWidget {
           Text(tab == 'reports' ? '리포트 탭' : '프로필 탭'),
         ],
       ),
+      bottomNavigationBar: MainNavigationScreen(),
     );
   }
 }
